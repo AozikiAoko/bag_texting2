@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://kt4hyj6xmoar"]
+
+[ext_resource type="Texture2D" uid="uid://b3jwtdvx08euw" path="res://assets/texture/inventorySlot.png" id="1_0xflk"]
+[ext_resource type="Script" path="res://source/slots/script/bag_slot.gd" id="1_xwu42"]
+[ext_resource type="PackedScene" uid="uid://c7hhv57jfw8u4" path="res://source/slots/item_till.tscn" id="2_kcap4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxb61"]
+atlas = ExtResource("1_0xflk")
+region = Rect2(0, 0, 20, 20)
+
+[node name="BagSlot" type="MarginContainer"]
+custom_minimum_size = Vector2(41, 41)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+script = ExtResource("1_xwu42")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(41, 41)
+layout_mode = 2
+texture = SubResource("AtlasTexture_kxb61")
+
+[node name="Item_till" parent="." instance=ExtResource("2_kcap4")]
+visible = false
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2

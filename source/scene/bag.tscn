@@ -1,0 +1,315 @@
+[gd_scene load_steps=11 format=3 uid="uid://b1036qkk8q6xp"]
+
+[ext_resource type="Script" path="res://source/scene/script/BagGui.gd" id="1_6mg5y"]
+[ext_resource type="Texture2D" uid="uid://5h0t2d2iybbd" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan.png" id="2_rly1i"]
+[ext_resource type="Texture2D" uid="uid://ditot6o87rgxf" path="res://assets/texture/InventoryRect.png" id="2_ujwhj"]
+[ext_resource type="Texture2D" uid="uid://b3jwtdvx08euw" path="res://assets/texture/inventorySlot.png" id="3_5e5kt"]
+[ext_resource type="Texture2D" uid="uid://caywoenquw8i3" path="res://assets/kenney_pixel-ui-pack/9-Slice/Colored/red.png" id="4_1m70q"]
+[ext_resource type="PackedScene" uid="uid://dkrih8hgvq6y8" path="res://source/slots/equit_slot.tscn" id="6_x54m7"]
+[ext_resource type="PackedScene" uid="uid://kt4hyj6xmoar" path="res://source/slots/bag_slot.tscn" id="7_xruoi"]
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/texture/items.png" id="8_whhj4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf3oy"]
+atlas = ExtResource("8_whhj4")
+region = Rect2(288, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ahqq"]
+atlas = ExtResource("8_whhj4")
+region = Rect2(192, 416, 32, 32)
+
+[node name="Bag" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6mg5y")
+
+[node name="BackGround" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_rly1i")
+region_rect = Rect2(0, 0, 48, 48)
+
+[node name="MainUI" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI"]
+layout_mode = 2
+
+[node name="TitleUI" type="MarginContainer" parent="MainUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainUI/VBoxContainer/TitleUI"]
+custom_minimum_size = Vector2(4, 20)
+layout_mode = 2
+texture = ExtResource("3_5e5kt")
+region_rect = Rect2(0.811119, 20, 18.3778, 20)
+
+[node name="Label" type="Label" parent="MainUI/VBoxContainer/TitleUI"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "背包"
+
+[node name="exit" type="Button" parent="MainUI/VBoxContainer/TitleUI"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "X"
+icon = ExtResource("2_ujwhj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="goodsUI" type="MarginContainer" parent="MainUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainUI/VBoxContainer/goodsUI"]
+layout_mode = 2
+
+[node name="armed" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="background" type="NinePatchRect" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed"]
+custom_minimum_size = Vector2(60, 90)
+layout_mode = 2
+texture = ExtResource("4_1m70q")
+region_rect = Rect2(0, 1, 48, 47)
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EquitSlot" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot2" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EquitSlot" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot2" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot3" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot4" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EquitSlot" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot2" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="EquitSlot3" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/armed/MarginContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("6_x54m7")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 2
+script = null
+
+[node name="weapon_and_onther" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="background" type="NinePatchRect" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther"]
+custom_minimum_size = Vector2(60, 90)
+layout_mode = 2
+texture = ExtResource("4_1m70q")
+region_rect = Rect2(0, 1, 48, 47)
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="label" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 15
+
+[node name="TabBar" type="TabBar" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/label"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 8
+tab_count = 4
+tab_0/title = "全部"
+tab_1/title = "装备"
+tab_2/title = "消耗品"
+tab_3/title = "材料"
+
+[node name="all_things" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 3
+
+[node name="BagSlots" type="GridContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 4
+
+[node name="BagSlot" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot2" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot3" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot4" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot5" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot6" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot7" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot8" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot9" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot10" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot11" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BagSlot12" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/all_things/ScrollContainer/MarginContainer/BagSlots" instance=ExtResource("7_xruoi")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Function" type="MarginContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/Function"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/Function/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+text = "分解
+"
+icon = SubResource("AtlasTexture_lf3oy")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/Function/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 10
+text = "整理
+"
+icon = SubResource("AtlasTexture_6ahqq")
+icon_alignment = 1
+
+[connection signal="pressed" from="MainUI/VBoxContainer/TitleUI/exit" to="." method="_on_exit_pressed"]
+[connection signal="tab_changed" from="MainUI/VBoxContainer/goodsUI/HBoxContainer/weapon_and_onther/MarginContainer/VBoxContainer/label/TabBar" to="." method="_on_tab_bar_tab_changed"]

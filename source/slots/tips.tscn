@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://xn4d52tveta8"]
+
+[ext_resource type="Texture2D" uid="uid://cky7uvlvbjfm0" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/grey.png" id="1_xc6kr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoaua"]
+atlas = ExtResource("1_xc6kr")
+
+[node name="Tips" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="background" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(200, 230)
+layout_mode = 2
+texture = SubResource("AtlasTexture_yoaua")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="prop_name" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="prop_name_text" type="Label" parent="VBoxContainer/prop_name"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+text = "道具名字"
+
+[node name="prop_introduce" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/prop_introduce"]
+layout_mode = 2
+
+[node name="introduce_title" type="MarginContainer" parent="VBoxContainer/prop_introduce/VBoxContainer"]
+layout_mode = 2
+
+[node name="text" type="Label" parent="VBoxContainer/prop_introduce/VBoxContainer/introduce_title"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 12
+text = "道具简介"
+
+[node name="introduce_text" type="MarginContainer" parent="VBoxContainer/prop_introduce/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="text" type="Label" parent="VBoxContainer/prop_introduce/VBoxContainer/introduce_text"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "这里写入道具的介绍,有一大堆文字"
+autowrap_mode = 3
+
+[node name="Attribute" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Attribute"]
+layout_mode = 2
+
+[node name="attribute_title" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 13
+text = "属性列表"
+
+[node name="attribute1" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "属性:???"
+
+[node name="attribute2" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "属性:???"
+
+[node name="attribute3" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "属性:???"

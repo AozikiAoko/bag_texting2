@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://huil4es3fksp"]
+
+[ext_resource type="PackedScene" uid="uid://ckbbpn5pyamw8" path="res://source/scene/player.tscn" id="1_0jn4h"]
+[ext_resource type="PackedScene" uid="uid://bb8pnyhx2kmfv" path="res://source/scene/GUI.tscn" id="1_i2yrh"]
+[ext_resource type="Script" path="res://source/scene/script/main.gd" id="1_wenpb"]
+[ext_resource type="PackedScene" uid="uid://b1036qkk8q6xp" path="res://source/scene/bag.tscn" id="2_42mou"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_wenpb")
+
+[node name="Player" parent="." instance=ExtResource("1_0jn4h")]
+unique_name_in_owner = true
+
+[node name="GUI" parent="." instance=ExtResource("1_i2yrh")]
+
+[node name="MainUI" parent="GUI" index="0"]
+size_flags_horizontal = 4
+
+[node name="Bag" parent="GUI/MainUI" index="1" instance=ExtResource("2_42mou")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.875
+anchor_top = 2.575
+anchor_right = 5.875
+anchor_bottom = 2.575
+offset_left = 88.0
+offset_top = 26.0
+offset_right = 488.0
+offset_bottom = 276.0
+metadata/_edit_use_anchors_ = true
+
+[node name="GM_Order" type="MarginContainer" parent="GUI/MainUI" index="2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 419.0
+offset_top = 403.0
+offset_right = 623.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/MainUI/GM_Order"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="GUI/MainUI/GM_Order/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "输入你的物品指令"
+
+[node name="bin_submit" type="Button" parent="GUI/MainUI/GM_Order/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+text = "提交"
+
+[connection signal="text_submitted" from="GUI/MainUI/GM_Order/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="GUI/MainUI/GM_Order/HBoxContainer/bin_submit" to="." method="_on_bin_submit_pressed"]
+
+[editable path="GUI"]

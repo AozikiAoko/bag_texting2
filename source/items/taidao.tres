@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Items" load_steps=4 format=3 uid="uid://c3rci65868ehr"]
+
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/texture/items.png" id="1_6ol5x"]
+[ext_resource type="Script" path="res://source/items/Item.gd" id="1_meu21"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gkm8"]
+atlas = ExtResource("1_6ol5x")
+region = Rect2(224, 160, 32, 32)
+
+[resource]
+script = ExtResource("1_meu21")
+name = "太刀"
+discription = "什么？你说这不是太刀!错了，宽刃太刀也是太刀！"
+itemType = 1
+icon = SubResource("AtlasTexture_8gkm8")
+max_stack = 1
+quantity = 1
+attributes = {
+"攻击力": 10.0
+}

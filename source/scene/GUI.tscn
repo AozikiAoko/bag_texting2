@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb8pnyhx2kmfv"]
+
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/texture/items.png" id="1_uwsrb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23l5a"]
+atlas = ExtResource("1_uwsrb")
+region = Rect2(0, 320, 32, 32)
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="MainUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="MainUI"]
+layout_mode = 1
+offset_right = 90.0
+offset_bottom = 88.0
+scale = Vector2(0.336001, 0.350001)
+icon = SubResource("AtlasTexture_23l5a")
+flat = true
+icon_alignment = 1
+expand_icon = true

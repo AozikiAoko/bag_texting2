@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckbbpn5pyamw8"]
+
+[ext_resource type="Script" path="res://source/add/C_Inventory.gd" id="1_t5l47"]
+
+[node name="Player" type="Node2D"]
+
+[node name="C_Inventory" type="Node" parent="."]
+script = ExtResource("1_t5l47")

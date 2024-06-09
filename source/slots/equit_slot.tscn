@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkrih8hgvq6y8"]
+
+[ext_resource type="PackedScene" uid="uid://kt4hyj6xmoar" path="res://source/slots/bag_slot.tscn" id="1_5e6g2"]
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/texture/items.png" id="2_lrgde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw2y3"]
+atlas = ExtResource("2_lrgde")
+region = Rect2(32, 160, 32, 32)
+
+[node name="EquitSlot" instance=ExtResource("1_5e6g2")]
+
+[node name="MarginContainer2" type="MarginContainer" parent="." index="1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2" index="0"]
+modulate = Color(1, 1, 1, 0.513726)
+layout_mode = 2
+texture = SubResource("AtlasTexture_qw2y3")
