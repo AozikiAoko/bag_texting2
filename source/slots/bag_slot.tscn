@@ -17,6 +17,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 script = ExtResource("1_xwu42")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(41, 41)
 layout_mode = 2

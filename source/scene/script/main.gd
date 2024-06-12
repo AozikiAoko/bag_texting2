@@ -42,7 +42,8 @@ func add_items(item_name:String,count:String):
 		return
 	var CInventory:C_Inventory=player.get_node("C_Inventory")
 	CInventory.add_items(item)
-	print_debug("添加道具:",item_name,"添加数量:",item_count,"指令执行完成")
+	print_debug("添加道具:",item_name,"添加数量:",min(item_count,item.max_stack),"指令执行完成")
+	
 
 ##创建道具方法
 func create_items(item_name:String,count:int)->Items:
@@ -51,6 +52,6 @@ func create_items(item_name:String,count:int)->Items:
 		push_error("未找到资源路径：",item_path)
 		return
 	var item:Items=load(item_path).duplicate()#加载资源并复制一份
-	item.quantity=count
+	item.quantity=min(count,item.max_stack)
 	return item
 

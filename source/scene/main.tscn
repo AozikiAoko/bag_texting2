@@ -16,6 +16,10 @@ unique_name_in_owner = true
 [node name="MainUI" parent="GUI" index="0"]
 size_flags_horizontal = 4
 
+[node name="Button" parent="GUI/MainUI" index="0"]
+offset_right = 237.0
+offset_bottom = 231.0
+
 [node name="Bag" parent="GUI/MainUI" index="1" instance=ExtResource("2_42mou")]
 unique_name_in_owner = true
 layout_mode = 1
@@ -50,7 +54,7 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "输入你的物品指令"
+placeholder_text = "输入你的物品指令"
 
 [node name="bin_submit" type="Button" parent="GUI/MainUI/GM_Order/HBoxContainer"]
 unique_name_in_owner = true

@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xn4d52tveta8"]
+[gd_scene load_steps=4 format=3 uid="uid://xn4d52tveta8"]
 
+[ext_resource type="Script" path="res://source/slots/script/tips.gd" id="1_qht43"]
 [ext_resource type="Texture2D" uid="uid://cky7uvlvbjfm0" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/grey.png" id="1_xc6kr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yoaua"]
@@ -12,6 +13,7 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+script = ExtResource("1_qht43")
 
 [node name="background" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(200, 230)
@@ -26,6 +28,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="prop_name_text" type="Label" parent="VBoxContainer/prop_name"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -59,6 +62,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="text" type="Label" parent="VBoxContainer/prop_introduce/VBoxContainer/introduce_text"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 8
@@ -69,6 +73,7 @@ autowrap_mode = 3
 
 [node name="Attribute" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -78,6 +83,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 
 [node name="attribute_title" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
@@ -85,22 +91,13 @@ theme_override_font_sizes/font_size = 13
 text = "属性列表"
 
 [node name="attribute1" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
-text = "属性:???"
-
-[node name="attribute2" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 20
-text = "属性:???"
-
-[node name="attribute3" type="Label" parent="VBoxContainer/Attribute/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 20
-text = "属性:???"
+text = "属性:???
+属性:???
+属性:???"

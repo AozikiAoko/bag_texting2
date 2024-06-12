@@ -16,5 +16,7 @@ icon = SubResource("AtlasTexture_8gkm8")
 max_stack = 1
 quantity = 1
 attributes = {
-"攻击力": 10.0
+"攻击力": 10.0,
+"攻击距离": 5.0,
+"攻击速度": 2.5
 }

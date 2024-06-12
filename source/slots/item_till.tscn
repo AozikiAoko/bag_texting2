@@ -8,6 +8,7 @@ atlas = ExtResource("1_eu3fv")
 region = Rect2(32, 320, 32, 32)
 
 [node name="Item_till" type="MarginContainer"]
+tooltip_text = "text"
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3

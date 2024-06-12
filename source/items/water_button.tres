@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Items" load_steps=4 format=3 uid="uid://crrqp8n0jbw6e"]
+
+[ext_resource type="Script" path="res://source/items/Item.gd" id="1_a2tg2"]
+[ext_resource type="Texture2D" uid="uid://cysna0fgve2h8" path="res://assets/texture/items.png" id="1_ooqh7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47qtl"]
+atlas = ExtResource("1_ooqh7")
+region = Rect2(32, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_a2tg2")
+name = "水瓶"
+discription = "用来喝的"
+itemType = 2
+icon = SubResource("AtlasTexture_47qtl")
+max_stack = 64
+quantity = 1
+attributes = {}
